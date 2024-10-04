@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.barbod.worldgen'
+version = '1.0-SNAPSHOT'
+
+String fileName = "BetterWorldGen.zip"
+
+dependencies {
+    implementation fileTree(dir: "../MCreator - 2024.3", includes: ["*.jar"])
+}
+
+tasks.jar {
+    archiveFileName.set(fileName)
+}
+
+tasks.register("create") {
+    dependsOn jar
+
+    def destination = file("../MCreator/plugins/" + fileName)
+    if (destination.exists()) {
+        destination.delete()
+    }
+
+    def buildFile = file("./build/libs/" + fileName)
+    if (buildFile.exists()) {
+        buildFile.renameTo(destination)
+    }
+}

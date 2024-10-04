@@ -1,0 +1,13 @@
+{
+  "id": "better_worldgen",
+  "javaplugin": "me.barbod.worldgen.Launcher",
+  "supportedVersions": [
+    2024003
+  ],
+  "info": {
+    "name": "Better WorldGen",
+    "version": "1.0.0",
+    "description": "This plugin add a new dimension mod element with more parameters",
+    "author": "BaR1Bo:D"
+  }
+}
